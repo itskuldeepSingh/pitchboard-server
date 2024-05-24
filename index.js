@@ -12,13 +12,13 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send("pitchboard api");
+    res.send("pitchboard api"); 4
 });
 
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "https://main--pitchboard.netlify.app/", // client code
+        origin: "https://pitchboard.netlify.app/", // client code
         methods: ["GET", "POST"],
     },
 });
