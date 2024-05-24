@@ -4,7 +4,8 @@ const app = express();
 const http = require("http");
 const { Server } = require("socket.io");
 const cors = require('cors');
-const PORT = 3001;
+// const PORT = 3001;
+const PORT = process.env.PORT
 const userRoutes = require('./routes/userRoute');
 
 app.use(cors());
@@ -17,7 +18,7 @@ app.get('/', (req, res) => {
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:5173", // client code
+        origin: "https://main--pitchboard.netlify.app/", // client code
         methods: ["GET", "POST"],
     },
 });
